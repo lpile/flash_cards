@@ -58,6 +58,7 @@ class Round
     ((number_correct_by_category(category).to_f/@number_in_category.count) * 100.0).round(1)
   end
 
+  # intro
   def start
     p "Welcome! You're playing with #{@deck.count} cards"
     p "-------------------------------------------"
@@ -66,6 +67,7 @@ class Round
     self.middle
   end
 
+  # middle of program
   def middle
     guess = gets.chomp.to_s
     take_turn(guess)
@@ -79,6 +81,7 @@ class Round
     end
   end
 
+  # outro
   def end
     p "************************ GAME OVER! ************************"
     p "You had #{self.number_correct} correct guess out of #{@turns.count} for a total score of #{self.percent_correct}%"
