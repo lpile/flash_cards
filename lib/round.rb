@@ -73,11 +73,11 @@ class Round
     take_turn(guess)
     p @turns.last.feedback
     if self.current_card == nil
-      self.end
+      self.end # Jumps to end method if there isn't any cards in deck
     else
       p "This is card number #{@current_card + 1} out of #{deck.count}"
       p "Question: #{current_card.question}"
-      self.middle
+      self.middle # Jumps to start of middle method
     end
   end
 
