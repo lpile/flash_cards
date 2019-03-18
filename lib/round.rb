@@ -33,13 +33,9 @@ class Round
 
   # number of correct answers by category
   def number_correct_by_category(category)
-    @correct_by_category = [] # resets category array
-    @correct.select do |correct|
-      if correct.card.category == category
-        @correct_by_category << correct
-      end
+    @correct.count do |correct|
+      correct.card.category == category
     end
-    @correct_by_category.count
   end
 
   # percent of correct answers
