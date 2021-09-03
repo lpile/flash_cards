@@ -21,13 +21,13 @@ describe Turn do
 
   describe '#correct?' do
     it 'can return true if the guess was correct' do
-      expect(@turn.correct?).to eq(true)
+      expect(@turn.correct?).to be true
     end
 
     it 'can return false if the guess was incorrect' do
       card = Card.new("What is the capital of Alaska?", "Juneau", :Geograpy)
       turn = Turn.new("Denver", card)
-      expect(turn.correct?).to eq(false)
+      expect(turn.correct?).to be false
     end
   end
 

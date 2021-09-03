@@ -37,14 +37,14 @@ describe Round do
   describe '#take_turn' do
     it 'can add to turns array when taking a turn' do
       turn = @round.take_turn("Juneau")
-      expect(turn.correct?).to eq(TRUE)
+      expect(turn.correct?).to be true
       expect(@round.turns).to eq([turn])
     end
 
     it 'can add to turns arrays correctly when taking two turns' do
       turn_1 = @round.take_turn("Juneau")
       turn_2 = @round.take_turn("Earth")
-      expect(turn_2.correct?).to eq(FALSE)
+      expect(turn_2.correct?).to be false
       expect(@round.turns).to eq([turn_1, turn_2])
     end
   end
